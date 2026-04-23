@@ -40,7 +40,7 @@ export default async function handler(
     // Cloudflare Workers execution context shim
     const ctx = {
       waitUntil: context.waitUntil.bind(context),
-      passThroughOnException: () => {},
+      passThroughOnException: () => { },
     };
 
     return await worker.fetch(request, env, ctx);
