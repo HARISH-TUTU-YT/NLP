@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Netlify Edge Function handles all SSR routes
+[[edge_functions]]
+  path = "/*"
+  function = "server"
+
+# Required environment variables — set these in Netlify dashboard
+# VITE_SUPABASE_URL
+# VITE_SUPABASE_PUBLISHABLE_KEY
+# VITE_SUPABASE_PROJECT_ID
