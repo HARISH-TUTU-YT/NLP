@@ -6,11 +6,10 @@
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
 
-# SPA fallback — redirect all routes to index.html for client-side routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Netlify Edge Function handles all SSR routes
+[[edge_functions]]
+  path = "/*"
+  function = "server"
 
 # Required environment variables — set these in Netlify dashboard
 # VITE_SUPABASE_URL

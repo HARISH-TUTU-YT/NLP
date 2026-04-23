@@ -7,15 +7,9 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // Disable the Cloudflare Workers plugin so Vite outputs to standard dist/
-  // instead of .output/public — required for Netlify static hosting.
-  cloudflare: false,
   vite: {
     server: {
       allowedHosts: "all",
-    },
-    build: {
-      outDir: "dist",
     },
   },
 });
